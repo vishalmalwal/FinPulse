@@ -47,8 +47,14 @@ export const TransactionDataGrid = ({ setIsModalOpen, onEditTransaction }) => {
     <section className="mb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
         <div>
-          <h2 className="text-3xl font-black tracking-tighter text-slate-950 dark:text-white">Recent Transactions</h2>
-          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Your financial history at a glance</p>
+          <h2 className={cn(
+            "text-3xl font-black tracking-tighter",
+            isDarkMode ? "text-white" : "text-slate-900"
+          )}>Recent Transactions</h2>
+          <p className={cn(
+            "text-[10px] font-bold uppercase tracking-widest",
+            isDarkMode ? "text-slate-500" : "text-slate-600"
+          )}>Your financial history at a glance</p>
         </div>
         
         <div className="flex flex-wrap items-center gap-4">
@@ -99,20 +105,20 @@ export const TransactionDataGrid = ({ setIsModalOpen, onEditTransaction }) => {
                 "border-b transition-colors",
                 isDarkMode ? "bg-slate-800/30 border-slate-800" : "bg-slate-50/50 border-slate-200"
               )}>
-                <th className="px-8 py-5 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+                <th className="px-8 py-5 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">
                   <button onClick={() => handleSort('date')} className="flex items-center gap-1.5 hover:text-indigo-600 transition-colors group">
                     Date <ArrowUpDown size={14} className="group-hover:scale-110 transition-transform" />
                   </button>
                 </th>
-                <th className="px-8 py-5 text-[10px] font-black text-slate-950 dark:text-slate-400 uppercase tracking-widest">Description</th>
-                <th className="px-8 py-5 text-[10px] font-black text-slate-950 dark:text-slate-400 uppercase tracking-widest">Category</th>
-                <th className="px-8 py-5 text-[10px] font-black text-slate-950 dark:text-slate-400 uppercase tracking-widest">
+                <th className="px-8 py-5 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">Description</th>
+                <th className="px-8 py-5 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">Category</th>
+                <th className="px-8 py-5 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">
                   <button onClick={() => handleSort('amount')} className="flex items-center gap-1.5 hover:text-indigo-600 transition-colors group">
                     Amount <ArrowUpDown size={14} className="group-hover:scale-110 transition-transform" />
                   </button>
                 </th>
-                <th className="px-8 py-5 text-[10px] font-black text-slate-950 dark:text-slate-400 uppercase tracking-widest">Type</th>
-                {userRole === 'Admin' && <th className="px-8 py-5 text-[10px] font-black text-slate-950 dark:text-slate-400 uppercase tracking-widest text-right">Actions</th>}
+                <th className="px-8 py-5 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">Type</th>
+                {userRole === 'Admin' && <th className="px-8 py-5 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest text-right">Actions</th>}
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -127,11 +133,11 @@ export const TransactionDataGrid = ({ setIsModalOpen, onEditTransaction }) => {
                       transition={{ delay: idx * 0.03 }}
                       className={cn(
                         "group hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-all duration-300",
-                        isDarkMode ? "text-slate-300" : "text-slate-950"
+                        isDarkMode ? "text-slate-300" : "text-slate-900"
                       )}
                     >
                       <td className="px-8 py-5 text-xs font-bold">{formatDate(t.date)}</td>
-                      <td className="px-8 py-5 text-sm font-black tracking-tight text-slate-950 dark:text-white">{t.description}</td>
+                      <td className="px-8 py-5 text-sm font-black tracking-tight">{t.description}</td>
                       <td className="px-8 py-5">
                         <span className={cn(
                           "px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest",
@@ -140,7 +146,7 @@ export const TransactionDataGrid = ({ setIsModalOpen, onEditTransaction }) => {
                           {t.category}
                         </span>
                       </td>
-                      <td className="px-8 py-5 text-base font-black tracking-tighter text-slate-950 dark:text-white">
+                      <td className="px-8 py-5 text-base font-black tracking-tighter">
                         {formatCurrency(t.amount)}
                       </td>
                       <td className="px-8 py-5">
@@ -186,7 +192,7 @@ export const TransactionDataGrid = ({ setIsModalOpen, onEditTransaction }) => {
                           <FileX2 size={40} />
                         </div>
                         <div className="space-y-1">
-                          <p className="text-xl font-black tracking-tight text-slate-950 dark:text-white">No records found</p>
+                          <p className="text-xl font-black tracking-tight text-slate-900 dark:text-white">No records found</p>
                           <p className="text-sm font-bold text-slate-500">Try adjusting your search parameters</p>
                         </div>
                         <button 
@@ -207,4 +213,3 @@ export const TransactionDataGrid = ({ setIsModalOpen, onEditTransaction }) => {
     </section>
   );
 };
-

@@ -47,7 +47,7 @@ export const Sidebar = () => {
                 "relative group flex items-center gap-2 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300",
                 item.active 
                   ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/40" 
-                  : "text-slate-600 hover:text-indigo-600 dark:hover:text-indigo-400"
+                  : "text-slate-600 hover:text-indigo-600 dark:hover:text-indigo-1000"
               )}
             >
               {item.icon}

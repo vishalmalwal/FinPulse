@@ -58,8 +58,14 @@ export default function App() {
                 </div>
               </div>
               <div className="hidden lg:block">
-                <h2 className="text-xl font-black tracking-tighter text-slate-950 dark:text-white">FINPULSE</h2>
-                <p className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest">Wealth Manager</p>
+                <h2 className={cn(
+                  "text-xl font-black tracking-tighter",
+                  isDarkMode ? "text-white" : "text-slate-900"
+                )}>FINPULSE</h2>
+                <p className={cn(
+                  "text-[10px] font-bold uppercase tracking-widest",
+                  isDarkMode ? "text-indigo-400" : "text-indigo-600"
+                )}>Wealth Manager</p>
               </div>
             </div>
 
@@ -118,7 +124,10 @@ export default function App() {
                 <div className="h-8 w-[1px] bg-slate-200 dark:bg-slate-800 mx-1" />
                 <div className="flex items-center gap-3 pl-2">
                   <div className="text-right hidden sm:block">
-                    <p className="text-xs font-black text-slate-950 dark:text-white uppercase tracking-tight">Vishal Malwal</p>
+                    <p className={cn(
+                      "text-xs font-black uppercase tracking-tight",
+                      isDarkMode ? "text-white" : "text-slate-900"
+                    )}>Vishal Malwal</p>
                     <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{userRole}</p>
                   </div>
                   <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20 ring-2 ring-white dark:ring-slate-800">
@@ -148,7 +157,7 @@ export default function App() {
                 Live Portfolio Status
               </motion.div>
               <h1 className="text-5xl lg:text-7xl font-black tracking-tighter leading-[0.9]">
-                Namaste, <br />
+                Welcome!, <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
                   Vishal Malwal! 🙏
                 </span>
@@ -196,7 +205,7 @@ export default function App() {
             <div className="w-8 h-8 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center">
               <span className="text-slate-500 font-bold">F</span>
             </div>
-            <p>© 2025 FinPulse India. Premium Wealth Management.</p>
+            <p>© FinPulse India. Premium Wealth Management.</p>
           </div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-indigo-600 transition-colors">Privacy</a>
@@ -215,6 +224,3 @@ export default function App() {
     </div>
   );
 }
-
-
-

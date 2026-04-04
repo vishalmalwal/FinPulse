@@ -75,9 +75,15 @@ export const InsightsWidget = () => {
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
           <Sparkles className="text-indigo-600" size={20} />
-          <h2 className="text-xl font-black tracking-tight text-slate-950 dark:text-white uppercase">Smart Insights</h2>
+          <h2 className={cn(
+            "text-xl font-black tracking-tight uppercase",
+            isDarkMode ? "text-white" : "text-slate-900"
+          )}>Smart Insights</h2>
         </div>
-        <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">AI-Powered Wealth Analysis</p>
+        <p className={cn(
+          "text-[10px] font-bold uppercase tracking-widest",
+          isDarkMode ? "text-slate-400" : "text-slate-600"
+        )}>AI-Powered Wealth Analysis</p>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -111,7 +117,10 @@ export const InsightsWidget = () => {
               )}>
                 {insight.title}
               </p>
-              <p className="text-sm font-black tracking-tight text-slate-950 dark:text-slate-200 leading-snug">
+              <p className={cn(
+                "text-sm font-black tracking-tight leading-snug",
+                isDarkMode ? "text-slate-200" : "text-slate-900"
+              )}>
                 {insight.text}
               </p>
             </div>
@@ -121,4 +130,3 @@ export const InsightsWidget = () => {
     </section>
   );
 };
-

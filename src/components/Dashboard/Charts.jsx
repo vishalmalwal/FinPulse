@@ -56,8 +56,14 @@ export const Charts = () => {
       >
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h3 className="text-xl font-black tracking-tight text-slate-950 dark:text-white">Financial Trend</h3>
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Monthly Balance Analysis</p>
+            <h3 className={cn(
+              "text-xl font-black tracking-tight",
+              isDarkMode ? "text-white" : "text-slate-900"
+            )}>Financial Trend</h3>
+            <p className={cn(
+              "text-[10px] font-bold uppercase tracking-widest",
+              isDarkMode ? "text-slate-500" : "text-slate-600"
+            )}>Monthly Balance Analysis</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1.5">
@@ -132,8 +138,14 @@ export const Charts = () => {
       >
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h3 className="text-xl font-black tracking-tight text-slate-950 dark:text-white">Expense Allocation</h3>
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Category Distribution</p>
+            <h3 className={cn(
+              "text-xl font-black tracking-tight",
+              isDarkMode ? "text-white" : "text-slate-900"
+            )}>Expense Allocation</h3>
+            <p className={cn(
+              "text-[10px] font-bold uppercase tracking-widest",
+              isDarkMode ? "text-slate-500" : "text-slate-600"
+            )}>Category Distribution</p>
           </div>
         </div>
 
@@ -180,4 +192,3 @@ export const Charts = () => {
     </div>
   );
 };
-
